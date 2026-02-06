@@ -17,10 +17,10 @@ app.setValidatorCompiler(validatorCompiler)
 app.register(fastifyCors, { origin: "*" })
 
 app.get("/health", () => {
-  return { status: "ok" };
+  return { status: "app invoices isok" };
 })
 
-app.listen({ port: 3000 }).then(() => {
-  console.log("[INVOICES] HTTP Server is running on port 3000");
+app.listen({ port: 3334 }).then(() => {
+  console.log("[INVOICES] HTTP Server is running on port 3334");
 });
  
