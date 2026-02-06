@@ -1,0 +1,35 @@
+_format_version: "3.0"
+_transform: true
+
+services:
+  - name: orders
+    url: http://host.docker.internal:3333
+    routes:
+      - name: api-orders
+        paths:
+          - /orders
+        protocols:
+          - http
+          - https
+
+  - name: invoices
+    url: http://host.docker.internal:3334
+    routes:
+      - name: api-invoices
+        paths:
+          - /invoices
+        protocols:
+          - http
+          - https
+
+plugins:
+  - name: cors
+    config:
+      origins:
+        - "*"
+      methods:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+        - OPTIONS
